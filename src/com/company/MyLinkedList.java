@@ -30,22 +30,18 @@ public class MyLinkedList implements NodeList {
                 } else {
                     // there is no next
                     // reach the end of the list
-                    currentItem.setNext(newItem);
-                    newItem.setPrevious(currentItem);
+                    currentItem.setNext(newItem).setPrevious(currentItem);
                     return true;
                 }
             } else if (comparison > 0) {
                 // new item is less, insert before
                 if(currentItem.previous() != null) {
-                    currentItem.previous().setNext(newItem);
-                    newItem.setPrevious(currentItem.previous());
-                    newItem.setNext(currentItem);
-                    currentItem.setPrevious(newItem);
+                    currentItem.previous().setNext(newItem).setPrevious(currentItem.previous());
+                    newItem.setNext(currentItem).setPrevious(newItem);
                 } else {
                     // there is no previous
                     // reach the head of the list
-                    newItem.setNext(this.root);
-                    this.root.setPrevious(newItem);
+                    newItem.setNext(this.root).setPrevious(newItem);
                     this.root = newItem;
                 }
                 return true;
