@@ -104,6 +104,12 @@ public class MyLinkedList implements NodeList {
             }
             System.out.println("=================");
         }
+//        if(root != null) {
+//            System.out.println(root.getValue());
+//            traverse(root.next());
+//            // 這樣執行會有上限（63次深）
+              // 超過會溢位
+//        }
     }
 
 
